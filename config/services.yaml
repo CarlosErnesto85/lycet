@@ -98,11 +98,19 @@ services:
         calls:
             - [setCachePath, ['%kernel.cache_dir%']]
 
+    Greenter\XMLSecLibs\Sunat\SignedXml: ~
+
+    App\Service\Greenter\FormattedSigner:
+        arguments:
+            $innerSigner: '@Greenter\XMLSecLibs\Sunat\SignedXml'
+
     Greenter\Api:
         public: true
         arguments:
-            - auth: '%env(AUTH_URL)%'
-              cpe: '%env(API_URL)%'
+            $endpoints:
+                auth: '%env(AUTH_URL)%'
+                cpe: '%env(API_URL)%'
+            $signer: '@App\Service\Greenter\FormattedSigner'
         calls:
             - [setBuilderOptions, [cache: '%kernel.cache_dir%']]
 

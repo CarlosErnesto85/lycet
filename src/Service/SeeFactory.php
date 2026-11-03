@@ -43,6 +43,10 @@ class SeeFactory
         $this->fileProvider = $fileProvider;
         $this->fileReader = $fileReader;
         $this->see = $see;
+        
+        // Wrap the original signer with FormattedSigner to format XML before signing
+        $originalSigner = $this->see->getFactory()->getSigner();
+        $this->see->getFactory()->setSigner(new \App\Service\Greenter\FormattedSigner($originalSigner));
     }
 
     public function build(string $class, ?string $ruc): See
