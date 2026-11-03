@@ -2,11 +2,13 @@
 
 namespace App\Service;
 
+use App\Service\Greenter\FormattedSigner;
 use Greenter\Model\Despatch\Despatch;
 use Greenter\Model\Perception\Perception;
 use Greenter\Model\Retention\Retention;
 use Greenter\Model\Voided\Reversion;
 use Greenter\See;
+use Greenter\XMLSecLibs\Sunat\SignedXml;
 
 class SeeFactory
 {
@@ -43,10 +45,14 @@ class SeeFactory
         $this->fileProvider = $fileProvider;
         $this->fileReader = $fileReader;
         $this->see = $see;
-        
-        // Wrap the original signer with FormattedSigner to format XML before signing
-        $originalSigner = $this->see->getFactory()->getSigner();
-        $this->see->getFactory()->setSigner(new \App\Service\Greenter\FormattedSigner($originalSigner));
+
+        // Wrap the original signer with FormattedSigner to format XML before signing.
+        // See is a shared service, so skip wrapping if a previous SeeFactory already did it.
+        $factory = $this->see->getFactory();
+        $originalSigner = $factory->getSigner();
+        if (!$originalSigner instanceof FormattedSigner) {
+            $factory->setSigner(new FormattedSigner($originalSigner ?? new SignedXml()));
+        }
     }
 
     public function build(string $class, ?string $ruc): See
