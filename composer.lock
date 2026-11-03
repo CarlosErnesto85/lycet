@@ -669,7 +669,7 @@
         },
         {
             "name": "greenter/ws",
-            "version": "v5.2.0",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/ws.git",
@@ -728,22 +728,22 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/ws/tree/v5.2.0"
+                "source": "https://github.com/thegreenter/ws/tree/v5.3.0"
             },
             "time": "2023-05-03T05:20:55+00:00"
         },
         {
             "name": "greenter/xml",
-            "version": "v5.2.0",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/xml.git",
-                "reference": "506c920ab1670bee944476d2bd1bf8197274e310"
+                "reference": "027ac6a54526d3bc8996fc04acb4d098cabc291b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/xml/zipball/506c920ab1670bee944476d2bd1bf8197274e310",
-                "reference": "506c920ab1670bee944476d2bd1bf8197274e310",
+                "url": "https://api.github.com/repos/thegreenter/xml/zipball/027ac6a54526d3bc8996fc04acb4d098cabc291b",
+                "reference": "027ac6a54526d3bc8996fc04acb4d098cabc291b",
                 "shasum": ""
             },
             "require": {
@@ -787,22 +787,22 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/xml/tree/v5.2.0"
+                "source": "https://github.com/thegreenter/xml/tree/v5.3.0"
             },
-            "time": "2026-02-25T19:23:42+00:00"
+            "time": "2026-06-08T19:26:31+00:00"
         },
         {
             "name": "greenter/xmldsig",
-            "version": "v5.0.3",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/xmldsig.git",
-                "reference": "98df1580228cff6c5f02a451ac162d00d384848e"
+                "reference": "3b70c1b1cd1b2be3693666b91be3e5adff620b76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/xmldsig/zipball/98df1580228cff6c5f02a451ac162d00d384848e",
-                "reference": "98df1580228cff6c5f02a451ac162d00d384848e",
+                "url": "https://api.github.com/repos/thegreenter/xmldsig/zipball/3b70c1b1cd1b2be3693666b91be3e5adff620b76",
+                "reference": "3b70c1b1cd1b2be3693666b91be3e5adff620b76",
                 "shasum": ""
             },
             "require": {
@@ -831,9 +831,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thegreenter/xmldsig/issues",
-                "source": "https://github.com/thegreenter/xmldsig/tree/master"
+                "source": "https://github.com/thegreenter/xmldsig/tree/v5.1.0"
             },
-            "time": "2020-07-31T04:45:22+00:00"
+            "time": "2026-10-04T05:40:10+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -5116,7 +5116,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -5125,6 +5125,6 @@
         "ext-iconv": "*",
         "ext-json": "*"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }

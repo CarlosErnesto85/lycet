@@ -1,0 +1,56 @@
+{
+  "version": "2022",
+  "tipoDoc": "09",
+  "serie": "T001",
+  "correlativo": "1",
+  "fechaEmision": "2026-11-03T10:00:00-05:00",
+  "company": {
+    "ruc": "20480072872",
+    "razonSocial": "PESQUERA DIAMANTE S.A.",
+    "nombreComercial": "PESQUERA DIAMANTE S.A.",
+    "address": {
+      "ubigueo": "150131",
+      "codigoPais": "PE",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "SAN ISIDRO",
+      "urbanizacion": "-",
+      "direccion": "CAL. AMADOR MERINO REYNA NRO. 307"
+    }
+  },
+  "destinatario": {
+    "tipoDoc": "6",
+    "numDoc": "20384203133",
+    "rznSocial": "ZV DISTRIBUIDORES S.A.C."
+  },
+  "envio": {
+    "codTraslado": "01",
+    "modTraslado": "01",
+    "fecTraslado": "2026-11-04T08:00:00-05:00",
+    "fecEntregaBienes": "2026-11-05T08:00:00-05:00",
+    "pesoTotal": 12.5,
+    "undPesoTotal": "KGM",
+    "llegada": {
+      "ubigueo": "150101",
+      "direccion": "AV. SANTA ELVIRA MZA. E LOTE. 1"
+    },
+    "partida": {
+      "ubigueo": "150131",
+      "direccion": "CAL. AMADOR MERINO REYNA NRO. 307"
+    },
+    "transportista": {
+      "tipoDoc": "6",
+      "numDoc": "20000000002",
+      "rznSocial": "TRANSPORTES S.A.C.",
+      "nroMtc": "0001"
+    }
+  },
+  "details": [
+    {
+      "codigo": "PROD1",
+      "descripcion": "PRODUCTO 1",
+      "unidad": "KGM",
+      "cantidad": 2
+    }
+  ]
+}
