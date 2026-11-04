@@ -3,6 +3,7 @@
 namespace App\Service\Greenter;
 
 use Greenter\XMLSecLibs\Sunat\SignedXml;
+use App\Helpers\SunatXmlFix;
 use App\Helpers\XmlFormat;
 
 class FormattedSigner extends SignedXml
@@ -51,7 +52,8 @@ class FormattedSigner extends SignedXml
             $content = str_replace('#GREENTER-SIGN', '#' . $signId, $content);
         }
 
-        // 3. Formatear el XML
+        // 3. Corregir TaxAmount "0" -> "0.00" (debe ser antes de firmar) y formatear el XML
+        $content = SunatXmlFix::normalizeZeroTaxAmount($content);
         $formattedContent = XmlFormat::format($content);
 
         // 4. Firmar el documento

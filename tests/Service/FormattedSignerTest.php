@@ -43,6 +43,25 @@ class FormattedSignerTest extends WebTestCase
         $this->assertTrue((new SignedXml())->verifyXml($xml), 'Digital signature must verify');
     }
 
+    public function testExoneratedTaxSubtotalUsesTwoDecimalsAndSignatureIsValid()
+    {
+        $xml = $this->requestInvoiceXml('invoice-exonerada.json');
+
+        $doc = new \DOMDocument();
+        $this->assertTrue($doc->loadXML($xml), 'Response must be valid XML');
+
+        $xpath = new \DOMXPath($doc);
+        $xpath->registerNamespace('cac', 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2');
+        $xpath->registerNamespace('cbc', 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2');
+
+        $this->assertSame(
+            '0.00',
+            $xpath->evaluate('string(/*/cac:TaxTotal/cac:TaxSubtotal[cac:TaxCategory/cac:TaxScheme/cbc:ID="9997"]/cbc:TaxAmount)')
+        );
+        $this->assertDoesNotMatchRegularExpression('/>\s*0\s*<\/cbc:TaxAmount>/', $xml);
+        $this->assertTrue((new SignedXml())->verifyXml($xml), 'Digital signature must verify');
+    }
+
     public function testSeeFactoryDoesNotWrapSignerTwice()
     {
         $see = new See();
@@ -63,7 +82,7 @@ class FormattedSignerTest extends WebTestCase
         $this->assertNotInstanceOf(FormattedSigner::class, $inner->getValue($first));
     }
 
-    private function requestInvoiceXml(): string
+    private function requestInvoiceXml(string $document = 'invoice.json'): string
     {
         $client = static::createClient();
         $client->getContainer()->set(ConfigProviderInterface::class, $this->getFileConfig());
@@ -74,7 +93,7 @@ class FormattedSignerTest extends WebTestCase
             [],
             [],
             ['CONTENT_TYPE' => 'application/json'],
-            file_get_contents(__DIR__ . '/../Resources/documents/invoice.json')
+            file_get_contents(__DIR__ . '/../Resources/documents/' . $document)
         );
 
         $response = $client->getResponse();

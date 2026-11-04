@@ -1,0 +1,68 @@
+{
+  "ublVersion": "2.1",
+  "tipoOperacion": "0101",
+  "tipoDoc": "01",
+  "serie": "FA99",
+  "correlativo": "1",
+  "fechaEmision": "2026-11-03T10:00:00-05:00",
+  "formaPago": {
+    "tipo": "Contado"
+  },
+  "company": {
+    "ruc": "20480072872",
+    "razonSocial": "PESQUERA DIAMANTE S.A.",
+    "nombreComercial": "PESQUERA DIAMANTE S.A.",
+    "address": {
+      "ubigueo": "150101",
+      "codigoPais": "PE",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "LIMA",
+      "urbanizacion": "-",
+      "direccion": "AV. PRUEBA 123",
+      "codLocal": "0000"
+    }
+  },
+  "client": {
+    "tipoDoc": "6",
+    "numDoc": "20384203133",
+    "rznSocial": "ZV DISTRIBUIDORES S.A.C.",
+    "address": {
+      "ubigueo": "150101",
+      "codigoPais": "PE",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "LIMA",
+      "direccion": "AV. SANTA ELVIRA MZA. E LOTE. 1"
+    }
+  },
+  "tipoMoneda": "PEN",
+  "mtoOperExoneradas": 100.00,
+  "mtoIGV": 0.00,
+  "totalImpuestos": 0.00,
+  "valorVenta": 100.00,
+  "subTotal": 100.00,
+  "mtoImpVenta": 100.00,
+  "details": [
+    {
+      "unidad": "NIU",
+      "cantidad": 1.00,
+      "codProducto": "EXO01",
+      "descripcion": "PRODUCTO EXONERADO DE PRUEBA",
+      "mtoValorUnitario": 100.00,
+      "mtoValorVenta": 100.00,
+      "tipAfeIgv": "20",
+      "mtoBaseIgv": 100.00,
+      "porcentajeIgv": 0.0,
+      "igv": 0.00,
+      "totalImpuestos": 0.00,
+      "mtoPrecioUnitario": 100.00
+    }
+  ],
+  "legends": [
+    {
+      "code": "1000",
+      "value": "SON CIEN CON 00/100 SOLES"
+    }
+  ]
+}
